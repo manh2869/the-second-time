@@ -13,7 +13,8 @@ int main()
     vector<int> a = {};
     nextPermutation(a);
     cout << "i am here too long" << endl;
-    for (int i = 0; i < 50000; i++)
-        cout << i << endl;
+	cout<<"thang bo may day" <<endl;
+ //   for (int i = 0; i < 50000; i++)
+ //       cout << i << endl;
     return 0;
 }
