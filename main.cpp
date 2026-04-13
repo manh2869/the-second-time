@@ -4,16 +4,33 @@
 using namespace std;
 void nextPermutation(vector<int> &nums)
 {
-    for (int i = 0; i < 10; i++)
-        cout << "vai loz luon" << endl;
-    cout << "nua ne" << endl;
+    if (nums.size() <= 1)
+        return;
+    int i = nums.size() - 2;
+    while (i >= 0 && nums[i] >= nums[i + 1])
+    {
+        i--;
+    }
+    if (i < 0)
+    {
+        reverse(nums.begin(), nums.end());
+        return;
+    }
+    int j = nums.size() - 1;
+    while (nums[i] >= nums[j])
+    {
+        j--;
+    }
+    swap(nums[i], nums[j]);
+    reverse(nums.begin() + i + 1, nums.end());
 }
+
 int main()
-{ //      2 1 3                    1      3      2        1    2    3
-    vector<int> a = {};
+{
+    vector<int> a = {2, 3, 1};
     nextPermutation(a);
-    cout << "i am here too long" << endl;
-    for (int i = 0; i < 50000; i++)
-        cout << i << endl;
+    for (int x : a)
+        cout << x << endl;
+    system("pause");
     return 0;
 }
