@@ -6,6 +6,7 @@ void nextPermutation(vector<int> &nums)
 {
     for (int i = 0; i < 10; i++)
         cout << "vai loz luon" << endl;
+    cout << "nua ne" << endl;
 }
 int main()
 { //      2 1 3                    1      3      2        1    2    3
