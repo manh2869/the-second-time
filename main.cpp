@@ -1,37 +1,35 @@
-#include <algorithm>
 #include <iostream>
-#include <vector>
-
+#include <stack>
 using namespace std;
-
-void nextPermutation(vector<int> &nums)
+int longestValidParentheses(string s)
 {
-    int n = static_cast<int>(nums.size());
-    int i = n - 2;
-
-    while (i >= 0 && nums[i] >= nums[i + 1])
-        --i;
-
-    if (i >= 0)
+    int maxlen = 0;
+    stack<char> st;
+    st.push(-1);
+    for (int i = 0; i < s.size(); i++)
     {
-        int j = n - 1;
-        while (nums[j] <= nums[i])
-            --j;
-        swap(nums[i], nums[j]);
+        if (s[i] == '(')
+        {
+            st.push(i);
+        }
+        else
+        {
+            st.pop();
+            if (st.empty())
+            {
+                st.pop();
+            }
+            else
+            {
+                maxlen = max(maxlen, i - st.top());
+            }
+        }
     }
-
-    reverse(nums.begin() + i + 1, nums.end());
+    return maxlen;
 }
-
 int main()
 {
-    vector<int> a = {2, 1, 3};
-
-    nextPermutation(a);
-
-    for (int x : a)
-        cout << x << ' ';
-    cout << '\n';
-
+    cout << longestValidParentheses("(()())()") << endl;
+    system("pause");
     return 0;
 }
