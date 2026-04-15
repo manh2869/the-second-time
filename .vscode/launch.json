@@ -10,7 +10,7 @@
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
-      "externalConsole": true,   // 👈 Mở trong CMD
+      "externalConsole": true,
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "preLaunchTask": "C/C++: g++.exe build active file"
