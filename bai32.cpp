@@ -27,6 +27,7 @@ int longestValidParentheses(string s)
     }
     return maxlen;
 }
+// check thu thoi
 int main()
 {
     cout << longestValidParentheses("(()())()") << endl;
