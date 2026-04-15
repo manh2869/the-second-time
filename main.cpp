@@ -4,7 +4,7 @@ using namespace std;
 int longestValidParentheses(string s)
 {
     int maxlen = 0;
-    stack<char> st;
+    stack<int> st;
     st.push(-1);
     for (int i = 0; i < s.size(); i++)
     {
@@ -17,7 +17,7 @@ int longestValidParentheses(string s)
             st.pop();
             if (st.empty())
             {
-                st.pop();
+                st.push(i);
             }
             else
             {
